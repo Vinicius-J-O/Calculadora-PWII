@@ -47,12 +47,28 @@
     $res = $p / ($a * $a);
 
     // Redireciona para limpar o POST e passa o valor via GET
-    header("Location: imc.php?resultado=" . number_format($res, 2));
+    header("Location: imc.php?resultado=" . number_format($res, 2) . "$peso=" .$p."$altura=".$a);
     exit;
   }
 
-  if (isset($_GET['resultado'])) {
-    echo "<h3>Resultado (via GET): " . $_GET['resultado'] . "</h3>";
+  if ($_GET['resultado'] <=18.5) {
+      echo ("<p> Abaixo do peso </p>");
+  } else if ($_GET['resultado'] > 18.5 && $_GET['resultado'] <= 24.9) {
+      echo ("<p> Peso normal</p>");
+  } else if ($_GET['resultado'] > 25 && $_GET['resultado'] <= 29.9) {
+      echo ("<p> Sobrepeso  </p>");
+  } else if ($_GET['resultado'] > 30 && $_GET['resultado'] <= 34.9) {
+      echo ("<p> Obesidade Grau I </p>");
+  } else if ($_GET['resultado'] > 35 && $_GET['resultado'] <= 39.9) {
+      echo ("<p> Obesidade Grau II </p>");
+  } else if ($_GET['resultado'] >= 40) {
+      echo ("<p> Obesidade Grau III </p>");
+  } 
+
+  if(isset($_GET['resultado'])){
+    echo"<h3>Resultado (via GET):".$_GET['resultado']."</h3><br>";
+    echo"<h3>Peso (via GET):".$_GET['peso']."</h3><br>";
+    echo"<h3>Altura (via GET):".$_GET['altura']."</h3>";
   }
   ?>
   <br><br>
