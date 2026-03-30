@@ -1,0 +1,33 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 0;
+    background-color:#9FC131;
+    width: 50vh;
+    height: 50vh;
+    border-radius: 5%;
+    margin: 20vh;
+    margin-bottom: 2vh;
+}
+.input{
+    margin: 2vh;
+    border: 0;
+    border-radius: 2px;
+    border-bottom: 100px, #D6D58E;
+    background-color: #DBF227;
+}
+.label{
+    display: flex;
+    margin-left: 1vh;
+}
+.btn{
+    margin: 2vh;
+}
